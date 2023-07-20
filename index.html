@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到 Chaotic World</title>
+    <style>
+        /* Global styles */
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Add your preferred background color here */
+        }
+
+        /* Box styles */
+        .box {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff; /* Background color is white */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Add some space between the text boxes */
+        }
+
+        /* Style the "OK" text */
+        .ok-text {
+            background-color: #4CAF50; /* Background color is green */
+            color: #fff; /* Text color is white */
+            cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box hello-world">Chaotic World</div>
+    <div class="box ok-text" onclick="copyToClipboard()">点击获取服务器地址</div>
+
+    <script>
+        function copyToClipboard() {
+            const textToCopy = "bee.mcla.fun:11065";
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert("复制成功！快来 van 吧！");
+        }
+    </script>
+</body>
+</html>
